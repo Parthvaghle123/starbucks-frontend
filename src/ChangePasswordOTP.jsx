@@ -27,7 +27,7 @@ const ChangePasswordOTP = () => {
 
   try {
     const res = await axios.post(
-      "https://starbucks-backend-tlc5.onrender.com/verify-email-send-otp",
+      "https://starbucks-backend-w2x3.onrender.com/verify-email-send-otp",
       { email: email.toLowerCase() },
       { withCredentials: true }
     );
@@ -53,7 +53,7 @@ const ChangePasswordOTP = () => {
     setLoading(true);
     
     try {
-      const res = await axios.post("https://starbucks-backend-tlc5.onrender.com/verify-otp", {
+      const res = await axios.post("https://starbucks-backend-w2x3.onrender.com/verify-otp", {
         email: email.toLowerCase(),
         otp,
       });
@@ -88,7 +88,7 @@ const ChangePasswordOTP = () => {
     setLoading(true);
     
     try {
-      const res = await axios.post("https://starbucks-backend-tlc5.onrender.com/change-password-otp", {
+      const res = await axios.post("https://starbucks-backend-w2x3.onrender.com/change-password-otp", {
         email: email.toLowerCase(),
         newPassword,
       });
@@ -121,7 +121,7 @@ const ChangePasswordOTP = () => {
   const handleResendOTP = async () => {
     setLoading(true);
     try {
-      const res = await axios.post("https://starbucks-backend-tlc5.onrender.com/verify-email-send-otp", {
+      const res = await axios.post("https://starbucks-backend-w2x3.onrender.com/verify-email-send-otp", {
         email: email.toLowerCase(),
       });
       

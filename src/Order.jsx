@@ -19,7 +19,7 @@ const Orders = () => {
   const fetchOrders = () => {
     const token = localStorage.getItem("token");
     axios
-      .get("https://starbucks-backend-tlc5.onrender.com/orders", {
+      .get("https://starbucks-backend-w2x3.onrender.com/orders", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setOrders(res.data.orders || res.data))
@@ -38,7 +38,7 @@ const Orders = () => {
 
     try {
       await axios.put(
-        `https://starbucks-backend-tlc5.onrender.com/api/cancel-order/${cancelOrderId}`,
+        `https://starbucks-backend-w2x3.onrender.com/api/cancel-order/${cancelOrderId}`,
         { reason: reasonToSend },
         { headers: { Authorization: `Bearer ${token}` } }
       );

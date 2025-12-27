@@ -35,7 +35,7 @@ const Profile = ({ token: propToken }) => {
       }
       try {
         setLoading(true);
-        const response = await axios.get("https://starbucks-backend-tlc5.onrender.com/user/profile", {
+        const response = await axios.get("https://starbucks-backend-w2x3.onrender.com/user/profile", {
           headers: { Authorization: `Bearer ${currentToken}` },
         });
         const data = response.data;
@@ -155,7 +155,7 @@ const Profile = ({ token: propToken }) => {
     try {
       setSaving(true);
       const response = await axios.put(
-        "https://starbucks-backend-tlc5.onrender.com/user/profile",
+        "https://starbucks-backend-w2x3.onrender.com/user/profile",
         profile,
         {
           headers: { Authorization: `Bearer ${token}` },
