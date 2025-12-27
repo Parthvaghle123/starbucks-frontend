@@ -34,7 +34,7 @@ const Item = () => {
         setLoading(true);
 
         const response = await axios.get(
-          "http://localhost:4500/api/products?displayOnGift=true"
+          "https://starbucks-backend-tlc5.onrender.com/api/products?displayOnGift=true"
         );
 
         const sortedProducts = response.data.sort((a, b) => {
@@ -120,7 +120,7 @@ const Item = () => {
 
     try {
       await axios.post(
-        "http://localhost:4500/add-to-cart",
+        "https://starbucks-backend-tlc5.onrender.com/add-to-cart",
         {
           productId: product._id,
           image: product.image,

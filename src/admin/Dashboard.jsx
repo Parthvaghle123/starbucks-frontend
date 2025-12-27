@@ -21,7 +21,7 @@ const Dashboard = () => {
           return;
         }
 
-        const response = await axios.get('http://localhost:4500/api/admin/stats', {
+        const response = await axios.get('https://starbucks-backend-tlc5.onrender.com/api/admin/stats', {
           headers: { Authorization: `Bearer ${token}` },
         });
 

@@ -127,7 +127,7 @@ const Register = () => {
     if (!validateForm()) return; // ❌ stop if validation fails
 
     axios
-      .post("http://localhost:4500/register", {
+      .post("https://starbucks-backend-tlc5.onrender.com/register", {
         ...form,
         password: password,
       })

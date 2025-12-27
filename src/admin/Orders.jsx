@@ -29,7 +29,7 @@ const Orders = () => {
   useEffect(() => {
     const token = localStorage.getItem("adminToken");
     axios
-      .get("http://localhost:4500/admin/orders", {
+      .get("https://starbucks-backend-tlc5.onrender.com/admin/orders", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -75,7 +75,7 @@ const Orders = () => {
       const token = localStorage.getItem("adminToken");
 
       await axios.put(
-        `http://localhost:4500/admin/orders/${orderId}/status`,
+        `https://starbucks-backend-tlc5.onrender.com/admin/orders/${orderId}/status`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -91,7 +91,7 @@ const Products = () => {
   const fetchProducts = async () => {
     try {
       const token = localStorage.getItem("adminToken");
-      const response = await axios.get("http://localhost:4500/admin/products", {
+      const response = await axios.get("https://starbucks-backend-tlc5.onrender.com/admin/products", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProducts(response.data);
@@ -129,7 +129,7 @@ const Products = () => {
     try {
       const token = localStorage.getItem("adminToken");
       const response = await axios.post(
-        "http://localhost:4500/admin/products",
+        "https://starbucks-backend-tlc5.onrender.com/admin/products",
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -151,7 +151,7 @@ const Products = () => {
     try {
       const token = localStorage.getItem("adminToken");
       const response = await axios.put(
-        `http://localhost:4500/admin/products/${selectedProduct._id}`,
+        `https://starbucks-backend-tlc5.onrender.com/admin/products/${selectedProduct._id}`,
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -184,7 +184,7 @@ const Products = () => {
     try {
       const token = localStorage.getItem("adminToken");
       const response = await axios.delete(
-        `http://localhost:4500/admin/products/${productId}`,
+        `https://starbucks-backend-tlc5.onrender.com/admin/products/${productId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -204,7 +204,7 @@ const Products = () => {
     try {
       const token = localStorage.getItem("adminToken");
       const response = await axios.patch(
-        `http://localhost:4500/admin/products/${productId}/toggle-availability`,
+        `https://starbucks-backend-tlc5.onrender.com/admin/products/${productId}/toggle-availability`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -226,7 +226,7 @@ const Products = () => {
     try {
       const token = localStorage.getItem("adminToken");
       const response = await axios.patch(
-        `http://localhost:4500/admin/products/${productId}/toggle-display`,
+        `https://starbucks-backend-tlc5.onrender.com/admin/products/${productId}/toggle-display`,
         { displayType },
         { headers: { Authorization: `Bearer ${token}` } }
       );

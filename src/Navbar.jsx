@@ -21,7 +21,7 @@ const Navbar = ({ username, setUsername }) => {
     try {
       const token = localStorage.getItem('token');
       if (token) {
-        await fetch('http://localhost:4500/logout', {
+        await fetch('https://starbucks-backend-tlc5.onrender.com/logout', {
           method: 'POST',
           headers: { Authorization: `Bearer ${token}` },
         });

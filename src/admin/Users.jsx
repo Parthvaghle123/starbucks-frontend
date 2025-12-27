@@ -55,7 +55,7 @@ const Users = () => {
           return;
         }
 
-        const response = await axios.get("http://localhost:4500/admin/users", {
+        const response = await axios.get("https://starbucks-backend-tlc5.onrender.com/admin/users", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

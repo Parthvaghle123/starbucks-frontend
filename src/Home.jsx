@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import Images from "./images";
+import Images from "./Images";
 // import "./Home.css";
 import Item from "./Item";
 const Home = ({ setUsername }) => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./css/cart.css";
+import "./css/Cart.css";
 
 const Check = () => {
   const navigate = useNavigate();
@@ -26,7 +26,7 @@ const Check = () => {
       if (!token) return;
 
       try {
-        const res = await axios.get("http://localhost:4500/user/profile1", {
+        const res = await axios.get("https://starbucks-backend-tlc5.onrender.com/user/profile1", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setFormData((prev) => ({
@@ -133,7 +133,7 @@ const placeOrder = async (e) => {
       cardNumber: rawCardNumber,
     };
 
-    await axios.post("http://localhost:4500/order", payload, {
+    await axios.post("https://starbucks-backend-tlc5.onrender.com/order", payload, {
       headers: { Authorization: `Bearer ${token}` },
     });
 

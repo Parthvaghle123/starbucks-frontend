@@ -23,7 +23,7 @@ const AdminLogin = () => {
     setLoading(true);
     setError("");
     try {
-      const res = await axios.post("http://localhost:4500/admin/login", {
+      const res = await axios.post("https://starbucks-backend-tlc5.onrender.com/admin/login", {
         username,
         password,
       });

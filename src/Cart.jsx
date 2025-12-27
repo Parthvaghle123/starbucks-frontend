@@ -14,7 +14,7 @@ const Cart = () => {
   const fetchCart = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:4500/cart", {
+      const res = await axios.get("https://starbucks-backend-tlc5.onrender.com/cart", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const cart = res.data.cart || [];
@@ -30,7 +30,7 @@ const Cart = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:4500/update-quantity/${productId}`,
+        `https://starbucks-backend-tlc5.onrender.com/update-quantity/${productId}`,
         { action },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -44,7 +44,7 @@ const Cart = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.delete(
-        `http://localhost:4500/remove-from-cart/${productId}`,
+        `https://starbucks-backend-tlc5.onrender.com/remove-from-cart/${productId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
