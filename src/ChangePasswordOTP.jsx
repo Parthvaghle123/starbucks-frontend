@@ -21,32 +21,31 @@ const ChangePasswordOTP = () => {
     setTimeout(() => setAlertMessage(""), 5000);
   };
 
-  // Step 1: Email verification and OTP sending
   const handleEmailSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    
-    try {
-      const res = await axios.post("https://starbucks-backend-tlc5.onrender.com/verify-email-send-otp", {
-        email: email.toLowerCase(),
-      });
+  e.preventDefault();
+  setLoading(true);
 
-      if (res.data.success) {
-        showAlert("OTP sent to your email successfully!", "success");
-        setStep(2);
-        // Show OTP in development
-        if (res.data.otp) {
-          console.log("Development OTP:", res.data.otp);
-        }
-      } else {
-        showAlert(res.data.message, "danger");
-      }
-    } catch (err) {
-      showAlert("Failed to send OTP. Please try again.", "danger",err);
-    } finally {
-      setLoading(false);
+  try {
+    const res = await axios.post(
+      "https://starbucks-backend-tlc5.onrender.com/verify-email-send-otp",
+      { email: email.toLowerCase() },
+      { withCredentials: true }
+    );
+
+    if (res.data.success) {
+      showAlert("OTP sent to your email", "success");
+      setStep(2);
+    } else {
+      showAlert(res.data.message || "Failed", "danger");
     }
-  };
+  } catch (err) {
+    console.error(err);
+    showAlert("Server not responding", "danger");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   // Step 2: OTP verification
   const handleOTPSubmit = async (e) => {
